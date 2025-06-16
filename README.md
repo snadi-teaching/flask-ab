@@ -1,6 +1,19 @@
-# Overview
+# A/B Testing
 
-This repo provides two simple ways to implement AB testing. Note that this repo does not have authentication and thus we don't have user identities to attach a variant to or to track. In your project, you have user identities and accordingly, you can save the assigned variant to a user (or in a separate experiment collection) such that you can analyze metrics at a user level later after your experiment.
+## Overview
+
+This repo provides two simple ways to implement A/B testing. Note that this repo does not have authentication and thus we don't have user identities to attach a variant to or to track. In your project, you have user identities and accordingly, you can save the assigned variant to a user (or in a separate experiment collection) such that you can analyze metrics at a user level later after your experiment.
+
+### Learning Objectives
+- Implement A/B testing for a Flask application
+- Assign users into groups via cookies
+- Collect and analyze test data
+
+### Prior Knowledge
+- Testing in production (Chaos Engineering, A/B testing)
+- Usage of Docker & MongoDB
+
+### Time Estimate: 20 minutes
 
 
 ## How to run the application
@@ -102,7 +115,7 @@ You should get something similar to this:
 Run the experiment as above, making sure to generate enough data. Run the queries in mongosh and take a screenshot of your results showing average clicks per user between the variants.
 
 
-## Using decorators to streamline your AB testing
+## Using decorators to streamline your A/B testing
 
 You can define custom decorators to help you manage your A/B testing. This allows you to leverage common code to create many A/B experiments without having to modify the code too much every time.
 

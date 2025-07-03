@@ -41,7 +41,7 @@ Now, let's see the simplest way we can implement this variant. We can assume tha
 Go to `frontend/frontend.py` and comment Line 17 and uncomment Lines 19 - 29 (You will find a comment telling you what to do). These lines add information to the response cookie about the current variant to serve. We assign this variant randomly. How you assign the variant depends on your experiment setup.
 We can use information later from this cookie to know which variant to serve.  
 
-Rebuild your containers use `docker compose up --build -d`. Now, repeat the above steps of running your application, clearing the cookies, and refreshing a couple of times: you should see a different variant in some of these times where some of these variants would end up with the "-- NEW VARIANT" message. If you can't see it, try decreasing the expiry time of the cookie to 20seconds and refresh every 20 seconds. You should see different variants being served.
+Rebuild your containers use `docker compose up --build -d`. Now, repeat the above steps of running your application, clearing the cookies, and refreshing a couple of times: you should see a different variant in some of these times where some of these variants would end up with the "-- NEW VARIANT" message. If you can't see it, try decreasing the expiry time of the cookie to 20 seconds and refresh every 20 seconds. You should see different variants being served.
 
 ### Step 2: Log the experiment results
 
@@ -75,6 +75,7 @@ show collections # this will display all collections
 db.students.find() # will display all students
 db.ab_test_logs.find() # will display all abtesting results
 ```
+If you cannot see the `abdemo` database, you may need to run `docker exec -it demo-ab-mongo mongosh` to check from inside the Docker container. If you are using Docker Desktop, you can click on the `demo-ab-mongo` container and go to the `exec` tab.
 
 Let's get some insights on the average number of clicks for users from each variant:
 
